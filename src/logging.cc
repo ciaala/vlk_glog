@@ -1271,7 +1271,8 @@ void LogMessage::Init(const char* file,
              << setfill(' ') << setw(5)
              << static_cast<unsigned int>(GetTID()) << setfill('0')
              << ' '
-             << data_->basename_ << ':' << data_->line_ << "] ";
+             << setfill(' ') << setw(24) << data_->basename_
+             << ':' <<  setfill('0') << setw(4) << data_->line_ << "] ";
   }
   data_->num_prefix_chars_ = data_->stream_.pcount();
 
